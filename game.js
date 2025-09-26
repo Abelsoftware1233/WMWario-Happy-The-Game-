@@ -1,6 +1,33 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
+// CSS toevoegen aan de head van het document
+const style = document.createElement('style');
+style.innerHTML = `
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #333;
+}
+
+#gameContainer {
+    width: 320px;
+    height: 480px;
+    background-image: url('achtergrond.jpg');
+    background-size: cover;
+    position: relative;
+    border: 2px solid black;
+}
+
+#gameCanvas {
+    background-color: transparent;
+}
+`;
+document.head.appendChild(style);
+
 let marioX = 50;
 let marioY = 200;
 let gravity = 0.4;
